@@ -6,6 +6,9 @@ public class StringCalculator {
 		if(numbers.equals("")) {
 			return 0;
 		}
+		else if(numbers.contains(",\n")){
+            return 0;
+        }
 		else if(numbers.contains("\n")){
 		    numbers = numbers.replace('\n',',');
 		}

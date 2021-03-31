@@ -15,5 +15,11 @@ public class testcode {
 		assertEquals(818076304, result);
 		result = strcalc.Add("14,19");
 		assertEquals(33, result);
+		result = strcalc.Add("1\n2,3");
+		assertEquals(6, result);
+		result = strcalc.Add("1\n2\n9");
+		assertEquals(12, result);
+		result = strcalc.Add("1353535\n24635346\n95634536");
+		assertEquals(121623417, result);
 	}
 }
