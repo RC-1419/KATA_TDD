@@ -6,8 +6,16 @@ public class StringCalculator {
 		if(numbers.equals("")) {
 			return 0;
 		}
-		else {
-			return sum;
+		else if(numbers.contains("\n")){
+		    numbers = numbers.replace('\n',',');
 		}
+		String[] number_array = numbers.split(",");
+		for(int i = 0; i < number_array.length; i++){
+		    sum += Integer.parseInt(number_array[i]);
+		}
+		return sum;
 	}
 }
+
+
+
