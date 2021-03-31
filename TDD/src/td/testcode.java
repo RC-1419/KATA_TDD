@@ -23,5 +23,9 @@ public class testcode {
 		assertEquals(121623417, result);
 		result = strcalc.Add("//;\n1;2");
 		assertEquals(3, result);
+		result = strcalc.Add("//'\n14'19");
+		assertEquals(33, result);
+		result = strcalc.Add("//%\n143532556%674543748");
+		assertEquals(818076304, result);
 	}
 }
