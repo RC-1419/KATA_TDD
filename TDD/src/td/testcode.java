@@ -21,5 +21,7 @@ public class testcode {
 		assertEquals(12, result);
 		result = strcalc.Add("1353535\n24635346\n95634536");
 		assertEquals(121623417, result);
+		result = strcalc.Add("//;\n1;2");
+		assertEquals(3, result);
 	}
 }
