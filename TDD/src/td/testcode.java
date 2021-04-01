@@ -1,9 +1,15 @@
 package td;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
+
 import static org.junit.Assert.*;
 
+import org.junit.Rule;
+
 public class testcode {
-	
+	@Rule
+	public ExpectedException exceptionRule = ExpectedException.none();
+
 	@Test
 	public void test() {
 		StringCalculator strcalc = new StringCalculator();
@@ -12,7 +18,7 @@ public class testcode {
 		result = strcalc.Add("1,2");
 		assertEquals(3, result);
 		result = strcalc.Add("143532556,674543748");
-		assertEquals(818076304, result);
+		assertEquals(0, result);
 		result = strcalc.Add("14,19");
 		assertEquals(33, result);
 		result = strcalc.Add("1\n2,3");
@@ -20,12 +26,20 @@ public class testcode {
 		result = strcalc.Add("1\n2\n9");
 		assertEquals(12, result);
 		result = strcalc.Add("1353535\n24635346\n95634536");
-		assertEquals(121623417, result);
+		assertEquals(0, result); 
 		result = strcalc.Add("//;\n1;2");
 		assertEquals(3, result);
 		result = strcalc.Add("//'\n14'19");
 		assertEquals(33, result);
 		result = strcalc.Add("//%\n143532556%674543748");
-		assertEquals(818076304, result);
+		assertEquals(0, result);
+		result = strcalc.Add("1000,2");
+		assertEquals(1002, result);
+		result = strcalc.Add("1001,1002");
+		assertEquals(0, result);
+		result = strcalc.Add("1000,1002");
+		assertEquals(1000, result);
+		result = strcalc.Add("100,1002");
+		assertEquals(100, result);
 	}
 }
