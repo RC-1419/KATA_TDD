@@ -4,6 +4,7 @@ import org.junit.rules.ExpectedException;
 
 import static org.junit.Assert.*;
 
+import org.junit.Assert;
 import org.junit.Rule;
 
 public class testcode {
@@ -59,5 +60,22 @@ public class testcode {
 		assertEquals(4, result);
 		result = strcalc.Add("//[*][%]\n1*2%3");
 		assertEquals(6, result);
+		result = strcalc.Add("//[*][%]\n100*258%3000");
+		assertEquals(358, result);
+		RuntimeException exception = null;
+		try {
+			strcalc.Add("-1,2");
+		}
+		catch (RuntimeException e) {
+	        exception = e;
+	    }
+	    Assert.assertEquals("negatives not allowed- -1 ", exception.getMessage());
+	    try {
+			strcalc.Add("-1,-2");
+		}
+		catch (RuntimeException e) {
+	        exception = e;
+	    }
+	    Assert.assertEquals("negatives not allowed- -1 -2 ", exception.getMessage());
 	}
 }

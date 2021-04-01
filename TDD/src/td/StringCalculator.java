@@ -63,13 +63,12 @@ public class StringCalculator {
                 continue;
             }
             else if(num<0) {
-                negative_string = number_array[i] + " ";
+                negative_string += number_array[i] + " ";
             }
             sum += num;
         }
         if(!negative_string.equals("")) {
-            //throw new NumberFormatException("negatives not allowed - [" + negative_string + "]");
-            throw new NumberFormatException("negatives not allowed");
+            throw new RuntimeException("negatives not allowed- " + negative_string);
         }
         return sum;
     }
