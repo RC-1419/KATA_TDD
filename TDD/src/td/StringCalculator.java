@@ -17,9 +17,9 @@ public class StringCalculator {
                 String value = number_array[1];
                 char to_find = number.charAt(0);
                 char to_next = number.charAt(1);
+                String delimiter = "";
                 if(to_find == to_next){
                     if(number.contains(""+to_find)){
-                        String delimiter = "";
                         for(int i=0;i<number.length();i++){
                             delimiter += "\\"+to_find;
                         }
@@ -31,7 +31,10 @@ public class StringCalculator {
                 }
                 else{
                     String arr[] = number.split("");
-                    String delimiter = arr[0] + "|" + arr[1];
+                    for(int i=0;i<arr.length;i++){
+                        arr[i] = "\\"+arr[i];
+                    }
+                    delimiter = arr[0] + "|" + arr[1];
                     number_array = value.split(delimiter);
                 }
             }

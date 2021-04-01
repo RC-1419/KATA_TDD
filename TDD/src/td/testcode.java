@@ -57,5 +57,7 @@ public class testcode {
 		assertEquals(1004, result);
 		result = strcalc.Add("//[%][#]\n1%1001#3");
 		assertEquals(4, result);
+		result = strcalc.Add("//[*][%]\n1*2%3");
+		assertEquals(6, result);
 	}
 }
