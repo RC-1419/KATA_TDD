@@ -41,5 +41,17 @@ public class testcode {
 		assertEquals(1000, result);
 		result = strcalc.Add("100,1002");
 		assertEquals(100, result);
+		result = strcalc.Add("1,2,3,4");
+		assertEquals(10, result);
+		result = strcalc.Add("//;\n1;2");
+		assertEquals(3, result);
+		result = strcalc.Add("//[***]\n1***2***3");
+		assertEquals(6, result);
+		result = strcalc.Add("//[???]\n1???2???3");
+		assertEquals(6, result);
+		result = strcalc.Add("//[###]\n1###2###3");
+		assertEquals(6, result);
+		result = strcalc.Add("//[%%%]\n1%%%2000%%%3");
+		assertEquals(4, result);
 	}
 }
