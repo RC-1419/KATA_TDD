@@ -10,22 +10,29 @@ public class StringCalculator {
         else if(numbers.contains("//")) {
             number_array = numbers.split("\n");
             if(numbers.contains("[") && numbers.contains("]")){
-                String number = number_array[0];
+                String number = number_array[0];;
                 number = number.replace("//","");
                 number = number.replace("[","");
                 number = number.replace("]","");
                 String value = number_array[1];
                 char to_find = number.charAt(0);
-                if(number.contains(""+to_find)){
-                    String delimiter = "";
-                    for(int i=0;i<number.length();i++){
-                        delimiter += "\\"+to_find;
+                char to_next = number.charAt(1);
+                if(to_find == to_next){
+                    if(number.contains(""+to_find)){
+                        String delimiter = "";
+                        for(int i=0;i<number.length();i++){
+                            delimiter += "\\"+to_find;
+                        }
+                        number_array = value.split(delimiter);
                     }
-                    number_array = value.split(delimiter);
+                    else{
+                        number_array = value.split(number);
+                    }
                 }
                 else{
-                    System.out.println(number);
-                    number_array = value.split(number);
+                    String arr[] = number.split("");
+                    String delimiter = arr[0] + "|" + arr[1];
+                    number_array = value.split(delimiter);
                 }
             }
             else{

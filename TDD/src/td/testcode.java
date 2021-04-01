@@ -53,5 +53,9 @@ public class testcode {
 		assertEquals(6, result);
 		result = strcalc.Add("//[%%%]\n1%%%2000%%%3");
 		assertEquals(4, result);
+		result = strcalc.Add("//[%%%]\n1%%%1000%%%3");
+		assertEquals(1004, result);
+		result = strcalc.Add("//[%][#]\n1%1001#3");
+		assertEquals(4, result);
 	}
 }
