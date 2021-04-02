@@ -1,15 +1,9 @@
 package td;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
-
 import static org.junit.Assert.*;
-
 import org.junit.Assert;
-import org.junit.Rule;
 
 public class testcode {
-	@Rule
-	public ExpectedException exceptionRule = ExpectedException.none();
 
 	@Test
 	public void test() {
