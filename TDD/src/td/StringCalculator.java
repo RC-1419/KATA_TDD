@@ -78,8 +78,7 @@ public class StringCalculator {
             number_array = numbers.split(",");
         }
         
-        
-        String negative_string = "";        // A variable to add negative numbers
+        String negative_string = "";        // A variable to hold all negative numbers
         
         for(int i = 0; i < number_array.length; i++){
             int num = Integer.parseInt(number_array[i]);
